@@ -27,7 +27,7 @@ const Index = () => {
       {/* Header */}
       <header className="sticky top-0 z-30 glass border-b border-border safe-top">
         <div className="flex items-center justify-between px-4 h-14">
-          <h1 className="text-lg font-bold text-gradient">{settings?.platform_name || 'Family Trend'}</h1>
+          <h1 className="text-lg font-bold text-gradient">{settings?.platform_name || 'Loly Fashion'}</h1>
           <div className="flex items-center gap-2">
             <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-muted transition-colors">
               {dark ? <Sun size={18} /> : <Moon size={18} />}

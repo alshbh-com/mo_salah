@@ -15,10 +15,10 @@ const SplashScreen = ({ storeName }: { storeName: string }) => (
       className="text-center"
     >
       <div className="w-20 h-20 rounded-2xl bg-primary-foreground/20 flex items-center justify-center mx-auto mb-4">
-        <span className="text-3xl font-bold text-primary-foreground">FT</span>
+        <span className="text-3xl font-bold text-primary-foreground">LF</span>
       </div>
       <h1 className="text-2xl font-bold text-primary-foreground">{storeName}</h1>
-      <p className="text-primary-foreground/70 text-sm mt-1">ملابس أطفال مميزة</p>
+      <p className="text-primary-foreground/70 text-sm mt-1">أزياء مميزة لكل الأسرة</p>
     </motion.div>
     <motion.div
       initial={{ width: 0 }}
@@ -59,7 +59,7 @@ export const AppShell = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <AnimatePresence>
-        {showSplash && <SplashScreen storeName={settings?.platform_name || 'Family Trend'} />}
+        {showSplash && <SplashScreen storeName={settings?.platform_name || 'Loly Fashion'} />}
       </AnimatePresence>
       {children}
     </>

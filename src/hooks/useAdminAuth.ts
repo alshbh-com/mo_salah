@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
-const TOKEN_KEY = 'family-trend-admin-token';
+const TOKEN_KEY = 'loly-fashion-admin-token';
 
 const generateToken = () => crypto.randomUUID() + '-' + Date.now();
 
