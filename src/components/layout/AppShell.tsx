@@ -18,7 +18,7 @@ const SplashScreen = ({ storeName }: { storeName: string }) => (
         <span className="text-3xl font-bold text-primary-foreground">FT</span>
       </div>
       <h1 className="text-2xl font-bold text-primary-foreground">{storeName}</h1>
-      <p className="text-primary-foreground/70 text-sm mt-1">ملابس أطفال مميزة</p>
+      <p className="text-primary-foreground/70 text-sm mt-1">أزياء مميزة لكل الأسرة</p>
     </motion.div>
     <motion.div
       initial={{ width: 0 }}

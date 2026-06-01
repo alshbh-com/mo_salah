@@ -27,13 +27,13 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
     try {
-      const saved = localStorage.getItem('family-trend-cart');
+      const saved = localStorage.getItem('loly-fashion-cart');
       return saved ? JSON.parse(saved) : [];
     } catch { return []; }
   });
 
   useEffect(() => {
-    localStorage.setItem('family-trend-cart', JSON.stringify(items));
+    localStorage.setItem('loly-fashion-cart', JSON.stringify(items));
   }, [items]);
 
   const addItem = (item: Omit<CartItem, 'id'>) => {
