@@ -5,7 +5,7 @@ import { Star } from 'lucide-react';
 
 type Product = Tables<'products'> & {
   product_images?: Tables<'product_images'>[];
-};
+} & Record<string, any>;
 
 const getDisplayPrice = (product: Product) => {
   if (product.is_offer && product.offer_price) return product.offer_price;

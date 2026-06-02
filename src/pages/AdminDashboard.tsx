@@ -52,7 +52,7 @@ const AdminDashboard = () => {
   const handleAddBanner = async () => {
     if (!bannerUrl || !bannerTitle) { toast.error('أدخل العنوان والصورة'); return; }
     setSaving(true);
-    const { error } = await supabase.from('banners').insert({ image_url: bannerUrl, title: bannerTitle, is_active: true });
+    const { error } = await (supabase as any).from('banners').insert({ image_url: bannerUrl, title: bannerTitle, is_active: true });
     setSaving(false);
     if (error) { toast.error('حدث خطأ'); return; }
     toast.success('تم إضافة البانر');
@@ -61,7 +61,7 @@ const AdminDashboard = () => {
   };
 
   const handleDeleteBanner = async (id: string) => {
-    await supabase.from('banners').delete().eq('id', id);
+    await (supabase as any).from('banners').delete().eq('id', id);
     toast.success('تم حذف البانر');
     refetchBanners();
   };
@@ -138,7 +138,7 @@ const AdminDashboard = () => {
           <Button onClick={handleAddBanner} disabled={saving} className="w-full gradient-primary text-primary-foreground rounded-xl">
             {saving ? <Loader2 className="animate-spin" /> : 'إضافة بانر'}
           </Button>
-          {banners?.map(banner => (
+          {banners?.map((banner: any) => (
             <div key={banner.id} className="flex items-center gap-3 bg-muted rounded-lg p-2">
               <img src={banner.image_url} alt={banner.title} className="w-16 h-10 rounded object-cover" />
               <span className="flex-1 text-sm truncate">{banner.title}</span>

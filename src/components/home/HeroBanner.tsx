@@ -20,9 +20,9 @@ export const HeroBanner = () => {
     <div className="relative w-full aspect-[2/1] rounded-xl overflow-hidden bg-muted">
       <AnimatePresence mode="wait">
         <motion.img
-          key={banners[current].id}
-          src={banners[current].image_url}
-          alt={banners[current].title}
+          key={(banners[current] as any).id}
+          src={(banners[current] as any).image_url}
+          alt={(banners[current] as any).title}
           className="w-full h-full object-cover"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}

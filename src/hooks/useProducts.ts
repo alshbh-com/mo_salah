@@ -35,7 +35,7 @@ export const useFeaturedProducts = () => {
   return useQuery({
     queryKey: ['featured-products', accessoryIds],
     queryFn: async () => {
-      let q = supabase
+      let q = (supabase as any)
         .from('products')
         .select('*, product_images(*), product_color_variants(*)')
         .eq('is_featured', true)
@@ -89,7 +89,7 @@ export const useSearchProducts = (search: string) => {
   return useQuery({
     queryKey: ['search-products', search, accessoryIds],
     queryFn: async () => {
-      let q = supabase
+      let q = (supabase as any)
         .from('products')
         .select('*, product_images(*)')
         .or(`name.ilike.%${search}%,name_ar.ilike.%${search}%`)
