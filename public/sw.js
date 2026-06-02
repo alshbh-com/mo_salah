@@ -1,4 +1,4 @@
-const CACHE_NAME = 'loly-fashion-v1';
+const CACHE_NAME = 'loly-fashion-v2';
 
 self.addEventListener('install', () => {
   self.skipWaiting();
