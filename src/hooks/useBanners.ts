@@ -6,7 +6,7 @@ export const useBanners = () => {
   const query = useQuery({
     queryKey: ['banners'],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('banners')
         .select('*')
         .eq('is_active', true)

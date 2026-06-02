@@ -102,7 +102,7 @@ const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { data: product, isLoading } = useProduct(id!);
+  const { data: product, isLoading } = useProduct(id!) as { data: any; isLoading: boolean };
   const { addItem } = useCart();
   const { data: governorates } = useGovernorates();
   const { data: relatedProducts } = useRelatedProducts(product?.category_id ?? null, id!);

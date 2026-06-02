@@ -33,11 +33,11 @@ export const OffersMarquee = () => {
   return (
     <div className="overflow-hidden gradient-primary rounded-lg py-2 px-1">
       <div className="flex animate-marquee whitespace-nowrap gap-8" dir="rtl">
-        {[...offers, ...offers].map((offer, i) => (
-          <div key={`${offer.id}-${i}`} className="flex items-center gap-3 text-primary-foreground text-sm shrink-0">
-            <span className="font-bold">{offer.title_ar}</span>
-            {offer.discount_percentage && <span className="bg-primary-foreground/20 px-2 py-0.5 rounded-full text-xs">خصم {offer.discount_percentage}%</span>}
-            {offer.end_date && <CountdownTimer endDate={offer.end_date} />}
+        {[...offers, ...offers].map((o: any, i) => (
+          <div key={`${o.id}-${i}`} className="flex items-center gap-3 text-primary-foreground text-sm shrink-0">
+            <span className="font-bold">{o.title_ar}</span>
+            {o.discount_percentage && <span className="bg-primary-foreground/20 px-2 py-0.5 rounded-full text-xs">خصم {o.discount_percentage}%</span>}
+            {o.end_date && <CountdownTimer endDate={o.end_date} />}
             <span className="text-primary-foreground/40">|</span>
           </div>
         ))}
