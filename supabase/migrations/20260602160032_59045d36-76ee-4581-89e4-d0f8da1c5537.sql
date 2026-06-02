@@ -1,0 +1,1 @@
+UPDATE public.app_settings SET platform_name='loly fashion store', invoice_name='family fashion' WHERE id='main';
