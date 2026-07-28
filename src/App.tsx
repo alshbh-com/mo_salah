@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import { AppShell } from "@/components/layout/AppShell";
 import { BottomNav } from "@/components/layout/BottomNav";
+import { PixelRouteTracker } from "@/components/PixelRouteTracker";
 import { lazy, Suspense } from "react";
 
 const Index = lazy(() => import("./pages/Index"));
