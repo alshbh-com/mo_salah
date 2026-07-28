@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchProducts } from '@/hooks/useProducts';
 import { ProductCard } from '@/components/product/ProductCard';
 import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
 import { Search as SearchIcon, X } from 'lucide-react';
+import { fbTrack } from '@/lib/fbpixel';
 
 const SearchPage = () => {
   const [query, setQuery] = useState('');
   const { data: products, isLoading } = useSearchProducts(query);
+
+  useEffect(() => {
+    if (query.length >= 2) {
+      const t = setTimeout(() => fbTrack('Search', { search_string: query }), 600);
+      return () => clearTimeout(t);
+    }
+  }, [query]);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="min-h-screen pb-20" dir="rtl">
