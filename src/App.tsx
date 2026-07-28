@@ -46,6 +46,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <AppShell>
+            <PixelRouteTracker />
             <Suspense fallback={<Loader />}>
               <Routes>
                 <Route path="/" element={<Index />} />
